@@ -5,68 +5,16 @@
     <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/lucide-react/lucide/main/icons/code.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- SEO Meta Tags Primarios -->
     <title>Diseño Web Valencia | Edgar Roca - Desarrollo Web Creativo y SEO</title>
-    <meta name="description" content="Especialista en diseño web en Valencia. Creación de páginas web de alto rendimiento, optimizadas para SEO y con enfoque creativo. Transforma tu presencia digital con código artesanal." />
-    <meta name="keywords" content="diseño web valencia, desarrollo web valencia, experto seo valencia, paginas web valencia, diseño web profesional, creative developer valencia, edgar roca" />
-    <meta name="author" content="Edgar Roca" />
-    <link rel="canonical" href="https://edgarroca.com/" />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://edgarroca.com/" />
-    <meta property="og:title" content="Diseño Web Valencia | Edgar Roca - Desarrollo Web Creativo" />
-    <meta property="og:description" content="Diseño y desarrollo de sitios web exclusivos en Valencia. Alto rendimiento, estética cinematográfica y optimización SEO." />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&h=630&q=80" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Diseño Web Valencia | Edgar Roca" />
-    <meta property="twitter:description" content="Diseño web a medida y SEO en Valencia. Ingeniería visual y código artesanal." />
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&h=630&q=80" />
-    
-    <!-- JSON-LD Local Business Schema (SEO Local Valencia) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Edgar Roca | Diseño Web Valencia",
-      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200",
-      "@id": "https://edgarroca.com",
-      "url": "https://edgarroca.com",
-      "telephone": "+34603179945",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Ruzafa",
-        "addressLocality": "Valencia",
-        "postalCode": "46006",
-        "addressCountry": "ES"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 39.4699,
-        "longitude": -0.3763
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "19:00"
-      },
-      "sameAs": [
-        "https://linkedin.com/in/edgarroca",
-        "https://instagram.com/edgarroca"
-      ],
-      "priceRange": "€€€"
-    }
-    </script>
+    <meta name="description" content="Especialista en diseño web en Valencia. Creación de páginas web de alto rendimiento, optimizadas para SEO y con enfoque creativo." />
+    <meta name="keywords" content="diseño web valencia, desarrollo web valencia, experto seo valencia, edgar roca" />
     
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -78,17 +26,8 @@
               mono: ['"JetBrains Mono"', 'monospace'],
             },
             colors: {
-              bronze: {
-                100: '#f5f2f0',
-                200: '#e1dcd9',
-                300: '#c7bfb8',
-                400: '#a3958a',
-                500: '#8c7e74',
-                600: '#70645c',
-              },
-              stone: {
-                950: '#0c0a09',
-              }
+              bronze: { 500: '#8c7e74' },
+              stone: { 950: '#0c0a09' }
             },
             animation: {
               'fade-in': 'fadeIn 1s ease-out forwards',
@@ -112,14 +51,13 @@
       }
     </script>
     
-    <!-- Import Map CORREGIDO para evitar pantalla negra -->
     <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@19.0.0",
     "react-dom": "https://esm.sh/react-dom@19.0.0",
     "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
-    "lucide-react": "https://esm.sh/lucide-react@0.475.0",
+    "lucide-react": "https://esm.sh/lucide-react@0.475.0?external=react",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/"
   }
@@ -128,13 +66,14 @@
     
     <style>
       body { background-color: #0c0a09; color: #f5f5f0; margin: 0; }
-      #root { min-height: 100vh; }
-      .no-scrollbar::-webkit-scrollbar { display: none; }
-      ::selection { background-color: #8c7e74; color: #ffffff; }
+      #root { min-height: 100vh; display: flex; flex-direction: column; }
+      .loading-state { flex: 1; display: flex; align-items: center; justify-content: center; font-family: monospace; color: #444; }
     </style>
   </head>
   <body class="antialiased">
-    <div id="root"></div>
+    <div id="root">
+      <div class="loading-state">Iniciando entorno creativo...</div>
+    </div>
     <script type="module" src="./index.tsx"></script>
   </body>
 </html>
