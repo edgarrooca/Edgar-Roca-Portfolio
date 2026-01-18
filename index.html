@@ -14,88 +14,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              serif: ['"Playfair Display"', 'serif'],
-              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-              mono: ['"JetBrains Mono"', 'monospace'],
-            },
-            colors: {
-              bronze: { 500: '#8c7e74' },
-              stone: { 950: '#0c0a09' }
-            },
-            animation: {
-              'fade-in': 'fadeIn 1s ease-out forwards',
-              'slide-up': 'slideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-              'noise': 'noise 0.5s steps(5) infinite',
-            },
-            keyframes: {
-              fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
-              slideUp: {
-                '0%': { opacity: '0', transform: 'translateY(40px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              noise: {
-                '0%': { transform: 'translate(0,0)' },
-                '10%': { transform: 'translate(-5%,-5%)' },
-                '100%': { transform: 'translate(5%,0)' },
-              }
-            }
-          }
-        }
-      }
-    </script>
-    
-    <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@19.0.0",
-    "react-dom": "https://esm.sh/react-dom@19.0.0",
-    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
-    "lucide-react": "https://esm.sh/lucide-react@0.475.0?external=react",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/"
-  }
-}
-</script>
-    
-    <style>
-      body { background-color: #0c0a09; color: #f5f5f0; margin: 0; }
-      #root { min-height: 100vh; display: flex; flex-direction: column; }
-      .loading-state { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; color: #444; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; gap: 20px; }
-      .spinner { width: 20px; height: 20px; border: 2px solid #222; border-top-color: #8c7e74; border-radius: 50%; animation: spin 1s linear infinite; }
-      @keyframes spin { to { transform: rotate(360deg); } }
-      #error-display { display: none; padding: 20px; color: #ff5555; font-family: monospace; font-size: 12px; position: fixed; bottom: 0; left: 0; width: 100%; background: #000; z-index: 9999; }
-    </style>
   </head>
   <body class="antialiased">
-    <div id="root">
-      <div class="loading-state">
-        <div class="spinner"></div>
-        <span>Cargando experiencia creativa — Valencia</span>
-      </div>
-    </div>
-    <div id="error-display"></div>
-    
-    <script>
-      // Capturador de errores para depuración en vivo
-      window.onerror = function(msg, url, line) {
-        const display = document.getElementById('error-display');
-        display.style.display = 'block';
-        display.innerHTML = 'Error: ' + msg + '<br>Línea: ' + line;
-      };
-      window.addEventListener('unhandledrejection', function(event) {
-        const display = document.getElementById('error-display');
-        display.style.display = 'block';
-        display.innerHTML = 'Error de carga: ' + event.reason;
-      });
-    </script>
-    <script type="module" src="./index.tsx"></script>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
