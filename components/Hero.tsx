@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import { Language } from '../types';
@@ -35,12 +34,11 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
 
       {/* Gradient Ambient Light */}
       <div className="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] bg-stone-800 rounded-full blur-[120px] opacity-20 pointer-events-none"></div>
-      <div className="absolute bottom-[-20%] right-[-10%] w-[40vw] h-[40vw] bg-stone-700 rounded-full blur-[120px] opacity-10 pointer-events-none"></div>
 
       <div className="relative z-10 max-w-[95%] mx-auto w-full">
         
         {/* Top Meta Data */}
-        <div className="flex justify-between items-end border-b border-stone-800 pb-4 mb-12 lg:mb-20 opacity-0 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+        <div className="flex justify-between items-end border-b border-stone-800 pb-4 mb-12 lg:mb-20 animate-fade-in">
           <span className="font-mono text-xs md:text-sm text-stone-500 uppercase tracking-widest flex items-center gap-2">
             {content[lang].location}
           </span>
@@ -49,14 +47,14 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
 
         {/* Kinetic Typography */}
         <div className="flex flex-col">
-          <h1 className="font-serif text-[13vw] leading-[0.85] text-white mix-blend-difference tracking-tighter opacity-0 animate-slide-up cursor-default select-none" style={{ animationDelay: '0.4s' }}>
+          <h1 className="font-serif text-[13vw] leading-[0.85] text-white mix-blend-difference tracking-tighter animate-slide-up cursor-default select-none">
             <span className="block hover:translate-x-4 transition-transform duration-700 ease-out">EDGAR</span>
             <span className="block text-right italic text-stone-600 hover:-translate-x-4 transition-transform duration-700 ease-out">ROCA</span>
           </h1>
         </div>
 
         {/* Bottom Description */}
-        <div className="mt-12 lg:mt-24 grid grid-cols-1 lg:grid-cols-12 gap-8 opacity-0 animate-slide-up items-end" style={{ animationDelay: '0.8s' }}>
+        <div className="mt-12 lg:mt-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end animate-fade-in" style={{ animationDelay: '0.5s' }}>
           <div className="lg:col-span-6 lg:col-start-7 text-right">
             <p className="text-stone-400 font-light text-lg md:text-xl leading-relaxed ml-auto max-w-2xl">
               {content[lang].desc}
@@ -67,7 +65,7 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-30 animate-bounce duration-[2000ms]">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-30 animate-bounce">
         <span className="text-[10px] uppercase tracking-widest text-stone-500">{content[lang].scroll}</span>
         <ArrowDown className="h-4 w-4 text-stone-500" />
       </div>
